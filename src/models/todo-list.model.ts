@@ -25,6 +25,17 @@ export class TodoList extends Entity {
   })
   color?: string;
 
+  // testing json type
+  @property({
+    type: 'object',
+    required: false,
+    postgresql: {
+      columnName: 'additional_info',
+      dataType: 'text',
+    },
+  })
+  additionalInfo?: object;
+
   @hasMany(() => Todo)
   todos: Todo[];
 
